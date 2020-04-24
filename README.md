@@ -1,3 +1,3 @@
 # Raytracer
-A siimple raytracer I wrote in C#.
+A simple raytracer I wrote in C#.
 
