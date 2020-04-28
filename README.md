@@ -5,3 +5,5 @@ The raytracer supports spheres, infinite planes, triangles, a single point light
 
 It is fairly slow to run on large images since it does not use parallelization (either with threads or the GPU). Other optimization techniques such as pooling and collision optimization could also speed up the raytracer.
 
+example image:
+![alt text](https://github.com/DoctorLugubrious/Raytracer/blob/master/Raytracer/result.png?raw=true)
