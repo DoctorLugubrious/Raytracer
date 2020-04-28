@@ -2,6 +2,7 @@
 using System;
 
 namespace Raytracer.Rendering {
+    //tests a scene for intersections.
     class IntersectionTester {
         private readonly Scene scene;
 

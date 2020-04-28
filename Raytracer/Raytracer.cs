@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Raytracer {
+
+    //contains the actual logic for raytracing.
     class Raytracer {
         private readonly IntersectionTester IntersectionTester;
         private Scene scene;
@@ -20,6 +22,7 @@ namespace Raytracer {
             this.viewPlaneWidth = aspectRatio * viewPlaneHeight;
         }
 
+        //calculates the color at the given 3D point using phong shading.
         private Color GetObjectColor(IntersectionTester.Intersection point, Vector3 viewFrom) {
             Light light = scene.light;
             Vector3 location = point.intersectionPoint;
@@ -49,6 +52,7 @@ namespace Raytracer {
             return beam - 2 * (beam * normal) * normal;
         }
 
+        //given a point and a view direction, returns the color including reflections
         private Color GetColorWithReflections(IntersectionTester.Intersection point, Vector3 direction, int depth) {
 
             const int MAX_DEPTH = 5;
@@ -121,10 +125,13 @@ namespace Raytracer {
                 outputFile.WriteLine("P3");
                 outputFile.WriteLine(width.ToString() + " " + height.ToString());
                 outputFile.WriteLine(Color.colorMax.ToString());
+                
+                //how many supersamples for each dimension? (adds antialiasing)
                 const int SAMPLE_SLICES = 3;
 
                 for (int y = height - 1; y >= 0; --y) {
                     for (int x = 0; x < width; ++x) {
+
                         List<KeyValuePair<float, Color>> samples = new List<KeyValuePair<float, Color>>();
                         for (int dy = 0; dy < SAMPLE_SLICES; ++dy) {
                             for (int dx = 0; dx < SAMPLE_SLICES; ++dx) {
@@ -134,6 +141,7 @@ namespace Raytracer {
                                     GetPixelColor(x + sampleX, y + sampleY)));
                             }
                         }
+
                         outputFile.WriteLine(Color.GetWeightedAverage(samples));
                     }
                 }

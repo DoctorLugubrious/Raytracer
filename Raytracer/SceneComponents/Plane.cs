@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Raytracer.Rendering;
 
 namespace Raytracer.SceneComponents {
+    //represents a plane in 3D space
     class Plane : SceneObject {
         private readonly Color color;
         private readonly Vector3 pos;

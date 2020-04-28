@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Raytracer.SceneComponents {
+    //represents a vector in 3D. Supports basic vector operations.
     class Vector3 {
         public Vector3(float x, float y, float z) {
             X = x;

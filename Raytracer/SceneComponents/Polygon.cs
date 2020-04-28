@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Raytracer.SceneComponents {
+    //represents a triangle in 3D space
     class Polygon : SceneObject {
         public Polygon(Color color, Vector3 point1, Vector3 point2, Vector3 point3, float reflectivity, float phongConstant): base(reflectivity, phongConstant) {
             Vector3 side1 = point2 - point1;

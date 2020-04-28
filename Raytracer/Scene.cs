@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Raytracer {
+    //represents the scene that will be rendered.
     class Scene {
         public List<SceneObject> objects { get; private set; }
 
@@ -19,7 +20,7 @@ namespace Raytracer {
         public float fieldOfView { get; private set; }
 
         public Scene() {
-            /* SCENE 1
+            /* SCENE 1 (assigned in class)
             objects = new List<SceneObject> {
                 new Sphere(new Color(255, 255, 255), new Vector3(0.35f, 0, -0.1f), 0.05f, 0.0f, 4),
                 new Sphere(new Color(255, 0, 0), new Vector3(0.5f, 0, -0.1f), 0.075f, 0.0f, 32),
@@ -36,7 +37,7 @@ namespace Raytracer {
             fieldOfView = ((float)Math.PI / 180) * 28;
             cameraDistance = -1;
             */
-            /* SCENE 2
+            /* SCENE 2 (assigned in class)
             objects = new List<SceneObject> {
                 new Sphere(new Color(255, 255, 255), new Vector3(0f, 0.3f, 0), 0.5f, 0.75f, 1),
                 new Polygon(new Color(0, 0, 255), new Vector3(0, -0.5f, 0.5f), new Vector3(1, 0.5f, 0f), new Vector3(0f, -0.5f, -0.5f), 0.0f, 4),
@@ -51,7 +52,7 @@ namespace Raytracer {
             fieldOfView = ((float)Math.PI / 180) * 55;
             cameraDistance = -1.2f;
             */
-            //SCENE 3
+            //SCENE 3 (my own custom scene)
 
 
             objects = new List<SceneObject> {
@@ -77,9 +78,6 @@ namespace Raytracer {
                 new Polygon(new Color(255, 255, 255), new Vector3(3, -1.1f, 7), new Vector3(3, 1.1f, 7), new Vector3(4.5f, 1.1f, 5f), 0.95f, 2),
 
                 new Plane(new Color(255, 255, 255), new Vector3(0, -1.1f, 0), new Vector3(0, 1, 0), 0.17f, 2f),
-                //new Plane(new Color(255, 255, 255), new Vector3(5, 0, 0), new Vector3(-1, 0, 0), 0.0f, 2f),
-                //new Plane(new Color(255, 255, 255), new Vector3(-2, 0, 0), new Vector3(1, 0, 0), 0.9f, 2f),
-                //new Plane(new Color(10, 10, 10), new Vector3(0, 0, 8), new Vector3(0, 0, -1), 0.9f, 2f),
             };
 
             ambientLight = new Color(10, 10, 10);

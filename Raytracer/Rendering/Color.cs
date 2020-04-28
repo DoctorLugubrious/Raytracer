@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Raytracer.Rendering {
+    //represents a RGB color with RGB values from 0 to 255
     class Color {
 
         public static int colorMax = 255;

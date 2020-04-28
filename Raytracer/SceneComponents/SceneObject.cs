@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Raytracer.SceneComponents {
+    //represents any object that can be rendered
     abstract class SceneObject {
         public abstract Vector3 GetIntersectionPoint(Ray ray);
         public abstract Color DiffuseColor { get; }
